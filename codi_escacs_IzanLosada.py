@@ -299,7 +299,7 @@ def joc(jugadors):
     print(f"RONDA {ronda}") 
 
     while not guanyador:
-        mostrar_taulell(taulell_def, peces_blanques_capturades, peces_negres_capturades)
+        mostrar_taulell(taulell_def)
         print(f"Torn del jugador {torn + 1}, {jugadors[torn]}")
 
         fila, col, fila_dest, col_dest = demanar_moviment()
@@ -383,13 +383,13 @@ def joc(jugadors):
         blanques, negres = comptar_fitxes(taulell_def) # Comprovem si queden fitxes en cada moviment al taulell
 
         if blanques == 0: # Si no queden d'algun color guanya l'altre jugador
-            mostrar_taulell(taulell_def, peces_blanques_capturades, peces_negres_capturades)
+            mostrar_taulell(taulell_def)
             print(f"GUANYADOR: {jugadors[1]} (Negres)")
             guanyador = True
             break
 
         if negres == 0: 
-            mostrar_taulell(taulell_def, peces_blanques_capturades, peces_negres_capturades)
+            mostrar_taulell(taulell_def)
             print(f"GUANYADOR: {jugadors[0]} (Blanques)")
             guanyador = True
             break
